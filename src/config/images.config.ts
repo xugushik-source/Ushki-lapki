@@ -76,8 +76,8 @@ const serviceHeroPositions: Record<string, string> = {
   "preventive-care": "center 45%",
 };
 
-// Doctors without a real photo yet (david-cohen, noah-schmidt) keep their
-// placeholder SVG until a matching photo is supplied.
+// Doctors without a real photo yet (noah-schmidt) keep their placeholder
+// SVG until a matching photo is supplied.
 const doctorOverrides: Record<string, string> = {
   "elena-popova": `${real}/cardiology-exam.jpg`,
   "thomas-wright": `${real}/dermatology-exam.jpg`,
@@ -85,11 +85,12 @@ const doctorOverrides: Record<string, string> = {
   "julia-becker": `${real}/exotic-rabbit.jpg`,
   "amelie-laurent": `${real}/inpatient-kennel.jpg`,
   "marco-ferrari": `${real}/dentistry-exam.jpg`,
+  "david-cohen": `${real}/david-cohen-portrait.jpg`,
 };
 
 const blogOverrides: Record<string, string> = {
   "puppy-first-year": `${real}/puppy-family.jpg`,
-  "cat-indoor-enrichment": `${real}/dermatology-exam.jpg`,
+  "cat-indoor-enrichment": `${real}/vet-two-cats.jpg`,
   "senior-pet-checkups": `${real}/cardiology-exam.jpg`,
   "dental-home-care": `${real}/dentistry-exam.jpg`,
   "nutrition-weight": `${real}/consultation-2.jpg`,
