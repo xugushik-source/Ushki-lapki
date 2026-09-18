@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#EDE6D6"/>
-      <stop offset="1" stop-color="#CFDCC7"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="1200" fill="url(#g)"/>
-  <g fill="#1F3D2E" opacity="0.55">
-    <circle cx="600" cy="554" r="34"/>
-  </g>
-  <text x="50%" y="640" font-family="Arial, sans-serif" font-size="42.857142857142854" fill="#1F3D2E" text-anchor="middle" font-weight="600">PET — CAT</text>
-  <text x="50%" y="670" font-family="Arial, sans-serif" font-size="21.818181818181817" fill="#3E5347" text-anchor="middle"></text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200" fill="#f1e9da"/>
+    <g fill="#1f3d2e">
+      <path d="M128 160 L110 95 L172 140 Z"/>
+      <path d="M272 160 L290 95 L228 140 Z"/>
+      <circle cx="200" cy="225" r="82"/>
+    </g>
+    <g fill="#f1e9da">
+      <ellipse cx="172" cy="212" rx="8" ry="11"/>
+      <ellipse cx="228" cy="212" rx="8" ry="11"/>
+      <path d="M200 228 L192 240 L208 240 Z"/>
+    </g>
+    <g stroke="#f1e9da" stroke-width="3" stroke-linecap="round">
+      <path d="M150 245 L110 240"/>
+      <path d="M150 253 L110 258"/>
+      <path d="M250 245 L290 240"/>
+      <path d="M250 253 L290 258"/>
+    </g>
+  </svg>

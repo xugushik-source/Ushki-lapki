@@ -5,6 +5,7 @@ import { absoluteUrl } from "@/lib/seo";
 import { services } from "@/config/services.config";
 import { doctors } from "@/config/doctors.config";
 import { demoBlog } from "@/data/demo/blog";
+import { localPages } from "@/data/demo/localPages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -42,6 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     for (const key of ["legalPrivacy", "legalCookies", "legalTerms"] as const) {
       entries.push({ url: absoluteUrl(routePath(locale, key)), changeFrequency: "yearly", priority: 0.3 });
+    }
+
+    // Local landing pages only exist for the market they're written for —
+    // see data/demo/localPages.ts.
+    if (locale === "en") {
+      for (const slug of Object.keys(localPages)) {
+        entries.push({ url: absoluteUrl(`${localePath(locale)}/${slug}`), changeFrequency: "monthly", priority: 0.6 });
+      }
     }
   }
 

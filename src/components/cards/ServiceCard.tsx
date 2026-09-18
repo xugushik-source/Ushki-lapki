@@ -16,16 +16,19 @@ export function ServiceCard({
   service,
   locale,
   cardCta,
+  cursorLabel,
 }: {
   service: ServiceDetail;
   locale: Locale;
   cardCta: string;
+  cursorLabel?: string;
 }) {
   return (
     <Link
       href={routePath(locale, "services", service.slug[locale])}
+      data-cursor={cursorLabel}
       className={cn(
-        "group relative overflow-hidden rounded-[var(--radius)] bg-primary text-primary-foreground shadow-[var(--shadow-lift)] transition-transform duration-500",
+        "group relative overflow-hidden rounded-[var(--radius)] bg-primary text-primary-foreground shadow-[var(--shadow-lift)] transition-transform duration-500 cursor-none-desktop",
         sizeClasses[service.bentoSize],
       )}
     >

@@ -5,6 +5,11 @@ import { getDictionary } from "@/locales";
 import { BlogDetailPage } from "@/features/pages/BlogDetailPage";
 import { demoBlog } from "@/data/demo/blog";
 
+export function generateStaticParams() {
+  const locales = ["ru"] as const;
+  return locales.flatMap((locale) => demoBlog.map((item) => ({ locale, slug: item.slug })));
+}
+
 export async function generateMetadata({
   params,
 }: {

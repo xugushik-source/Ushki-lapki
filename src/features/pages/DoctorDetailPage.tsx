@@ -5,11 +5,13 @@ import { getDictionary } from "@/locales";
 import { doctors } from "@/config/doctors.config";
 import { services } from "@/config/services.config";
 import { clinicConfig } from "@/config/clinic.config";
+import { demoReviews } from "@/data/demo/reviews";
 import { routePath } from "@/lib/routes";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { ReviewCard } from "@/components/cards/ReviewCard";
 
 export function DoctorDetailPage({ locale, slug }: { locale: Locale; slug: string }) {
   const dict = getDictionary(locale);
@@ -17,6 +19,7 @@ export function DoctorDetailPage({ locale, slug }: { locale: Locale; slug: strin
   if (!doctor) notFound();
 
   const doctorServices = services.filter((s) => doctor.serviceSlugs.includes(s.slug.en));
+  const doctorReviews = demoReviews.filter((r) => r.doctorSlug === doctor.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,6 +98,17 @@ export function DoctorDetailPage({ locale, slug }: { locale: Locale; slug: strin
                     >
                       {s.name[locale]}
                     </a>
+                  ))}
+                </div>
+              </FadeUp>
+            ) : null}
+
+            {doctorReviews.length ? (
+              <FadeUp className="mt-10">
+                <h3 className="font-serif text-lg text-foreground">{dict.doctorDetail.reviewsHeading}</h3>
+                <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                  {doctorReviews.map((review) => (
+                    <ReviewCard key={review.id} review={review} locale={locale} />
                   ))}
                 </div>
               </FadeUp>

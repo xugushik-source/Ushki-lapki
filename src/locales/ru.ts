@@ -8,6 +8,7 @@ export const ru: Dictionary = {
     directions: "Маршрут",
     whatsapp: "WhatsApp",
     viewProfile: "Смотреть профиль",
+    view: "Смотреть",
     learnMore: "Подробнее",
     readMore: "Читать статью",
     bookNow: "Записаться",
@@ -235,6 +236,7 @@ export const ru: Dictionary = {
     expertiseHeading: "Специализация",
     languagesHeading: "Языки",
     servicesHeading: "Услуги врача",
+    reviewsHeading: "Что говорят пациенты",
     ctaHeading: "Записаться к этому врачу",
   },
   legalPage: {

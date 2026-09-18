@@ -32,6 +32,7 @@ export function ServicesBento({ locale, dict }: { locale: Locale; dict: Dictiona
               service={service}
               locale={locale}
               cardCta={dict.servicesSection.cardCta}
+              cursorLabel={dict.common.view}
             />
           ))}
         </div>

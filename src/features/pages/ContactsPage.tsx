@@ -3,12 +3,15 @@ import { Locale } from "@/types";
 import { getDictionary } from "@/locales";
 import { clinicConfig } from "@/config/clinic.config";
 import { socialConfig } from "@/config/social.config";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { Map } from "@/components/ui/Map";
+import { localPages } from "@/data/demo/localPages";
+import { localePath } from "@/lib/routes";
 
 export function ContactsPage({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -97,6 +100,19 @@ export function ContactsPage({ locale }: { locale: Locale }) {
           <Button href={clinicConfig.mapsUrl} variant="outline" className="mt-8">
             {dict.common.directions}
           </Button>
+
+          {locale === "en" ? (
+            <div className="mt-10 text-sm text-muted-foreground">
+              <p className="font-medium text-foreground">Serving Boston</p>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                {Object.values(localPages).map((page) => (
+                  <Link key={page.slug} href={`${localePath(locale)}/${page.slug}`} className="underline-offset-4 hover:underline">
+                    {page.h1}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </FadeUp>
 
         <FadeUp delay={0.1}>

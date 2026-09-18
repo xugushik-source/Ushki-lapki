@@ -8,6 +8,7 @@ export const it: Dictionary = {
     directions: "Indicazioni",
     whatsapp: "WhatsApp",
     viewProfile: "Vedi il profilo",
+    view: "Vedi",
     learnMore: "Scopri di più",
     readMore: "Leggi l’articolo",
     bookNow: "Prenota ora",
@@ -235,6 +236,7 @@ export const it: Dictionary = {
     expertiseHeading: "Aree di competenza",
     languagesHeading: "Lingue parlate",
     servicesHeading: "Servizi offerti",
+    reviewsHeading: "Cosa dicono i pazienti",
     ctaHeading: "Prenota con questo veterinario",
   },
   legalPage: {

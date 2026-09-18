@@ -8,6 +8,7 @@ export const en: Dictionary = {
     directions: "Directions",
     whatsapp: "WhatsApp",
     viewProfile: "View profile",
+    view: "View",
     learnMore: "Learn more",
     readMore: "Read article",
     bookNow: "Book now",
@@ -235,6 +236,7 @@ export const en: Dictionary = {
     expertiseHeading: "Areas of expertise",
     languagesHeading: "Languages",
     servicesHeading: "Services provided",
+    reviewsHeading: "What patients say",
     ctaHeading: "Book with this doctor",
   },
   legalPage: {

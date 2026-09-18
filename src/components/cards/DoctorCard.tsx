@@ -7,15 +7,18 @@ export function DoctorCard({
   doctor,
   locale,
   viewProfileLabel,
+  cursorLabel,
 }: {
   doctor: DoctorConfig;
   locale: Locale;
   viewProfileLabel: string;
+  cursorLabel?: string;
 }) {
   return (
     <Link
       href={routePath(locale, "doctors", doctor.slug)}
-      className="group relative block overflow-hidden rounded-[var(--radius)] bg-primary shadow-[var(--shadow-lift)]"
+      data-cursor={cursorLabel}
+      className="group relative block overflow-hidden rounded-[var(--radius)] bg-primary shadow-[var(--shadow-lift)] cursor-none-desktop"
     >
       <div className="relative aspect-3/4 overflow-hidden">
         <Image

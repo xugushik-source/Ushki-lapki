@@ -29,7 +29,7 @@ export function DoctorsPreview({ locale, dict }: { locale: Locale; dict: Diction
         <StaggerContainer className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {featured.map((doctor) => (
             <StaggerItem key={doctor.slug}>
-              <DoctorCard doctor={doctor} locale={locale} viewProfileLabel={dict.common.viewProfile} />
+              <DoctorCard doctor={doctor} locale={locale} viewProfileLabel={dict.common.viewProfile} cursorLabel={dict.common.view} />
             </StaggerItem>
           ))}
         </StaggerContainer>

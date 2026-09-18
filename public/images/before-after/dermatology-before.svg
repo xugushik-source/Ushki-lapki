@@ -1,14 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#EDE6D6"/>
-      <stop offset="1" stop-color="#CFDCC7"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="900" fill="url(#g)"/>
-  <g fill="#1F3D2E" opacity="0.55">
-    <circle cx="600" cy="404" r="34"/>
-  </g>
-  <text x="50%" y="490" font-family="Arial, sans-serif" font-size="42.857142857142854" fill="#1F3D2E" text-anchor="middle" font-weight="600">DERMATOLOGY — BEFORE</text>
-  <text x="50%" y="520" font-family="Arial, sans-serif" font-size="21.818181818181817" fill="#3E5347" text-anchor="middle"></text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="#f1e9da"/>
+    <ellipse cx="200" cy="210" rx="140" ry="120" fill="#d9c49a"/>
+    <g fill="#c0483a" opacity="0.75">
+        <circle cx="160" cy="170" r="6"/>
+        <circle cx="220" cy="150" r="5"/>
+        <circle cx="190" cy="220" r="7"/>
+        <circle cx="250" cy="210" r="5"/>
+      </g>
+  </svg>

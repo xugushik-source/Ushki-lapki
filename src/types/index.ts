@@ -74,6 +74,7 @@ export interface ReviewEntry {
   rating: 1 | 2 | 3 | 4 | 5;
   source: "Google" | "Facebook" | "Clinic";
   text: LocalizedText;
+  doctorSlug?: string;
 }
 
 export interface BlogPost {

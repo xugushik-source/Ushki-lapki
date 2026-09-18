@@ -6,6 +6,7 @@ import { images } from "@/config/images.config";
 export const demoReviews: ReviewEntry[] = [
   {
     id: "r1",
+    doctorSlug: "noah-schmidt",
     ownerName: "Amanda R.",
     petName: "Biscuit",
     petPhoto: images.reviewPet(1),
@@ -36,6 +37,7 @@ export const demoReviews: ReviewEntry[] = [
   },
   {
     id: "r3",
+    doctorSlug: "julia-becker",
     ownerName: "Karin H.",
     petName: "Rocco",
     petPhoto: images.reviewPet(3),
@@ -51,6 +53,7 @@ export const demoReviews: ReviewEntry[] = [
   },
   {
     id: "r4",
+    doctorSlug: "julia-becker",
     ownerName: "Sophie L.",
     petName: "Pixel",
     petPhoto: images.reviewPet(4),
@@ -66,6 +69,7 @@ export const demoReviews: ReviewEntry[] = [
   },
   {
     id: "r5",
+    doctorSlug: "thomas-wright",
     ownerName: "Marcus T.",
     petName: "Luna",
     petPhoto: images.reviewPet(5),
@@ -81,6 +85,7 @@ export const demoReviews: ReviewEntry[] = [
   },
   {
     id: "r6",
+    doctorSlug: "elena-popova",
     ownerName: "Elif K.",
     petName: "Charlie",
     petPhoto: images.reviewPet(6),

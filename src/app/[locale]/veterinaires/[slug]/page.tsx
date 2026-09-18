@@ -5,6 +5,11 @@ import { getDictionary } from "@/locales";
 import { DoctorDetailPage } from "@/features/pages/DoctorDetailPage";
 import { doctors } from "@/config/doctors.config";
 
+export function generateStaticParams() {
+  const locales = ["fr"] as const;
+  return locales.flatMap((locale) => doctors.map((item) => ({ locale, slug: item.slug })));
+}
+
 export async function generateMetadata({
   params,
 }: {

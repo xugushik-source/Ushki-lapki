@@ -8,6 +8,7 @@ import { routePath } from "@/lib/routes";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function EmergencySection({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -28,10 +29,12 @@ export function EmergencySection({ locale, dict }: { locale: Locale; dict: Dicti
           <p className="mt-4 max-w-lg text-primary-foreground/80">{dict.emergency.subtitle}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={`tel:${clinicConfig.emergency.phone}`} variant="secondary" size="lg">
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              {dict.common.callNow}
-            </Button>
+            <Magnetic className="inline-block">
+              <Button href={`tel:${clinicConfig.emergency.phone}`} variant="secondary" size="lg">
+                <Phone className="h-4 w-4" aria-hidden="true" />
+                {dict.common.callNow}
+              </Button>
+            </Magnetic>
             <Button href={clinicConfig.mapsUrl} variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               {dict.common.directions}

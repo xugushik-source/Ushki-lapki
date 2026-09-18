@@ -12,7 +12,14 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { ThemeDemoSwitcher } from "@/components/demo/ThemeDemoSwitcher";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "../globals.css";
+
+// Runs before hydration so a theme chosen in the demo switcher (previous
+// tab/session) applies without a flash of the default theme on next load.
+const themeAntiFlashScript = `(function(){try{var t=localStorage.getItem("demo-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();`;
 
 // Playfair Display, not Fraunces: Fraunces ships no Cyrillic glyphs, which
 // would silently break every RU heading (brief section 3 forbids leftover
@@ -82,18 +89,21 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} data-theme={ACTIVE_THEME} className={`${playfair.variable} ${inter.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeAntiFlashScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a href="#main-content" className="skip-link">
           {dict.common.skipToContent}
         </a>
         <Header locale={locale} dict={dict} />
         <main id="main-content" className="flex-1 pb-20 lg:pb-0">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer locale={locale} dict={dict} />
         <MobileActionBar locale={locale} dict={dict} />
         <ConsentBanner locale={locale} dict={dict} />
         <AnalyticsScripts />
+        <ThemeDemoSwitcher />
+        <CustomCursor />
       </body>
     </html>
   );

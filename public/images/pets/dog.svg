@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#EDE6D6"/>
-      <stop offset="1" stop-color="#CFDCC7"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="1200" fill="url(#g)"/>
-  <g fill="#1F3D2E" opacity="0.55">
-    <circle cx="600" cy="554" r="34"/>
-  </g>
-  <text x="50%" y="640" font-family="Arial, sans-serif" font-size="42.857142857142854" fill="#1F3D2E" text-anchor="middle" font-weight="600">PET — DOG</text>
-  <text x="50%" y="670" font-family="Arial, sans-serif" font-size="21.818181818181817" fill="#3E5347" text-anchor="middle"></text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+    <circle cx="200" cy="200" r="200" fill="#c9d8c0"/>
+    <g fill="#1f3d2e">
+      <path d="M120 150 Q100 90 150 100 Q160 140 140 175 Z"/>
+      <path d="M280 150 Q300 90 250 100 Q240 140 260 175 Z"/>
+      <ellipse cx="200" cy="220" rx="88" ry="78"/>
+    </g>
+    <g fill="#c9d8c0">
+      <circle cx="168" cy="205" r="9"/>
+      <circle cx="232" cy="205" r="9"/>
+      <ellipse cx="200" cy="235" rx="16" ry="12"/>
+      <path d="M200 247 Q200 262 185 262" stroke="#c9d8c0" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M200 247 Q200 262 215 262" stroke="#c9d8c0" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+  </svg>

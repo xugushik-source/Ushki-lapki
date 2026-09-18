@@ -24,6 +24,7 @@ export function ServicesListPage({ locale }: { locale: Locale }) {
               service={service}
               locale={locale}
               cardCta={dict.servicesSection.cardCta}
+              cursorLabel={dict.common.view}
             />
           ))}
         </div>

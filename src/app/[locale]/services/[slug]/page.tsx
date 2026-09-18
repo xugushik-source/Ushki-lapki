@@ -5,6 +5,11 @@ import { getDictionary } from "@/locales";
 import { ServiceDetailPage } from "@/features/pages/ServiceDetailPage";
 import { services } from "@/config/services.config";
 
+export function generateStaticParams() {
+  const locales = ["en","fr","ru"] as const;
+  return locales.flatMap((locale) => services.map((s) => ({ locale, slug: s.slug[locale] })));
+}
+
 export async function generateMetadata({
   params,
 }: {

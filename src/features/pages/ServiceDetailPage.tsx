@@ -140,7 +140,7 @@ export function ServiceDetailPage({ locale, slug }: { locale: Locale; slug: stri
                 <Heading as="h3">{dict.serviceDetail.doctorsHeading}</Heading>
                 <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {serviceDoctors.map((doctor) => (
-                    <DoctorCard key={doctor.slug} doctor={doctor} locale={locale} viewProfileLabel={dict.common.viewProfile} />
+                    <DoctorCard key={doctor.slug} doctor={doctor} locale={locale} viewProfileLabel={dict.common.viewProfile} cursorLabel={dict.common.view} />
                   ))}
                 </div>
               </FadeUp>

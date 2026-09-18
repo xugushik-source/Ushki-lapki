@@ -6,6 +6,7 @@ export interface Dictionary {
     directions: string;
     whatsapp: string;
     viewProfile: string;
+    view: string;
     learnMore: string;
     readMore: string;
     bookNow: string;
@@ -190,6 +191,7 @@ export interface Dictionary {
     expertiseHeading: string;
     languagesHeading: string;
     servicesHeading: string;
+    reviewsHeading: string;
     ctaHeading: string;
   };
   legalPage: {

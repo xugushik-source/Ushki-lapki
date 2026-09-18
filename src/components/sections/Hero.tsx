@@ -10,6 +10,7 @@ import { routePath } from "@/lib/routes";
 import { Button } from "@/components/ui/Button";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { Container } from "@/components/ui/Container";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const reduce = useReducedMotion();
@@ -61,9 +62,11 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.35 }}
         >
-          <Button href={routePath(locale, "booking")} size="lg">
-            {dict.hero.ctaPrimary}
-          </Button>
+          <Magnetic className="inline-block">
+            <Button href={routePath(locale, "booking")} size="lg">
+              {dict.hero.ctaPrimary}
+            </Button>
+          </Magnetic>
           <Button href={`tel:${clinicConfig.emergency.phone}`} variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/10">
             {dict.hero.ctaSecondary}
           </Button>
