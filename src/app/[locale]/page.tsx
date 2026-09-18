@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/locales";
-import { resolveLocale } from "@/lib/routes";
+import { resolveLocale, localePath } from "@/lib/routes";
+import { buildAlternates, absoluteUrl } from "@/lib/seo";
 import { clinicConfig } from "@/config/clinic.config";
 import { Hero } from "@/components/sections/Hero";
 import { TrustNumbers } from "@/components/sections/TrustNumbers";
@@ -20,11 +21,25 @@ export async function generateMetadata({
   const locale = resolveLocale((await params).locale);
   const dict = getDictionary(locale);
 
+  const title = `${clinicConfig.name[locale]} — ${clinicConfig.legalSuffix[locale]}`;
+
   return {
-    title: `${clinicConfig.name[locale]} — ${clinicConfig.legalSuffix[locale]}`,
+    title,
     description: dict.hero.subtitle,
     alternates: {
-      canonical: `/${locale}`,
+      canonical: absoluteUrl(localePath(locale)),
+      ...buildAlternates("home"),
+    },
+    openGraph: {
+      title,
+      description: dict.hero.subtitle,
+      locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: dict.hero.subtitle,
     },
   };
 }

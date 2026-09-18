@@ -24,6 +24,9 @@ export const fr: Dictionary = {
     page404Title: "Cette page est partie se promener.",
     page404Body: "Nous n’avons pas trouvé ce que vous cherchiez. Revenons sur le bon chemin.",
     skipToContent: "Aller au contenu",
+    cookieAccept: "Accepter",
+    cookieDecline: "Refuser",
+    cookieBannerText: "Nous utilisons des cookies essentiels au fonctionnement du site, et des cookies analytiques uniquement avec votre consentement.",
   },
   nav: {
     services: "Services",

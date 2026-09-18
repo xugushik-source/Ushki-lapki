@@ -24,6 +24,9 @@ export const de: Dictionary = {
     page404Title: "Diese Seite ist Gassi gegangen.",
     page404Body: "Wir konnten die gesuchte Seite nicht finden. Wir bringen Sie zurück auf den richtigen Weg.",
     skipToContent: "Zum Inhalt springen",
+    cookieAccept: "Akzeptieren",
+    cookieDecline: "Ablehnen",
+    cookieBannerText: "Wir verwenden essenzielle Cookies für den Betrieb dieser Website und Analyse-Cookies nur mit Ihrer Zustimmung.",
   },
   nav: {
     services: "Leistungen",

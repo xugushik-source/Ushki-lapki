@@ -22,6 +22,9 @@ export interface Dictionary {
     page404Title: string;
     page404Body: string;
     skipToContent: string;
+    cookieAccept: string;
+    cookieDecline: string;
+    cookieBannerText: string;
   };
   nav: {
     services: string;

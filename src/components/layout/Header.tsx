@@ -88,16 +88,22 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <LanguageSwitcher locale={locale} label={dict.common.language} variant={isTransparent ? "dark" : "light"} />
+          <LanguageSwitcher
+            locale={locale}
+            label={dict.common.language}
+            variant={isTransparent ? "dark" : "light"}
+            className="hidden lg:flex"
+          />
           <a
             href={`tel:${clinicConfig.phone}`}
+            aria-label={clinicConfig.phoneDisplay}
             className={cn(
-              "hidden items-center gap-1.5 text-sm font-medium sm:flex",
+              "flex items-center gap-1.5 text-sm font-medium",
               isTransparent ? "text-white" : "text-foreground",
             )}
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
-            {clinicConfig.phoneDisplay}
+            <span className="hidden sm:inline">{clinicConfig.phoneDisplay}</span>
           </a>
           <Button href={routePath(locale, "booking")} size="md" className="hidden sm:inline-flex">
             {dict.common.bookAppointment}

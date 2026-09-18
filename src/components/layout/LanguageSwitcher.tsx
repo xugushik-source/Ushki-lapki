@@ -13,16 +13,18 @@ export function LanguageSwitcher({
   locale,
   label,
   variant = "light",
+  className,
 }: {
   locale: Locale;
   label: string;
   variant?: "light" | "dark";
+  className?: string;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative">
+    <div className={cn("relative", className)}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}

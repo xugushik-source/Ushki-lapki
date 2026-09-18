@@ -24,6 +24,9 @@ export const ru: Dictionary = {
     page404Title: "Эта страница ушла на прогулку.",
     page404Body: "Мы не нашли то, что вы искали. Давайте вернёмся на правильный путь.",
     skipToContent: "Перейти к содержимому",
+    cookieAccept: "Принять",
+    cookieDecline: "Отказаться",
+    cookieBannerText: "Мы используем обязательные cookie для работы сайта и аналитические — только с вашего согласия.",
   },
   nav: {
     services: "Услуги",

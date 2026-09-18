@@ -24,6 +24,9 @@ export const en: Dictionary = {
     page404Title: "This page went for a walk.",
     page404Body: "We couldn’t find what you’re looking for. Let’s get you back on track.",
     skipToContent: "Skip to content",
+    cookieAccept: "Accept",
+    cookieDecline: "Decline",
+    cookieBannerText: "We use essential cookies to run this site, and analytics cookies only with your consent.",
   },
   nav: {
     services: "Services",

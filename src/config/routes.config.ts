@@ -1,7 +1,19 @@
 import { Locale } from "@/types";
 
+// Legal URL segments stay constant across locales on purpose — the brief's
+// localized-URL examples (section 22/40) are all about content sections
+// (services, doctors, ...), never about /legal/. Translating "legal" itself
+// per language would 5x the number of physical route folders for a page
+// nobody navigates to by typing a URL, so we keep it in English and localize
+// only the page content.
+const legalSegments = {
+  legalPrivacy: "legal/privacy-policy",
+  legalCookies: "legal/cookie-policy",
+  legalTerms: "legal/terms",
+};
+
 // Localized URL segments. Switching language keeps the visitor on the
-// equivalent page instead of bouncing to the homepage (see localePathFor in lib/routes.ts).
+// equivalent page instead of bouncing to the homepage (see switchLocalePath in lib/routes.ts).
 export const routeSegments: Record<Locale, Record<string, string>> = {
   en: {
     services: "services",
@@ -12,9 +24,7 @@ export const routeSegments: Record<Locale, Record<string, string>> = {
     faq: "faq",
     blog: "pet-care",
     booking: "booking",
-    legalPrivacy: "legal/privacy-policy",
-    legalCookies: "legal/cookie-policy",
-    legalTerms: "legal/terms",
+    ...legalSegments,
   },
   de: {
     services: "leistungen",
@@ -25,9 +35,7 @@ export const routeSegments: Record<Locale, Record<string, string>> = {
     faq: "faq",
     blog: "tierratgeber",
     booking: "termin",
-    legalPrivacy: "recht/datenschutz",
-    legalCookies: "recht/cookie-richtlinie",
-    legalTerms: "recht/impressum",
+    ...legalSegments,
   },
   fr: {
     services: "services",
@@ -38,9 +46,7 @@ export const routeSegments: Record<Locale, Record<string, string>> = {
     faq: "faq",
     blog: "conseils-animaux",
     booking: "rendez-vous",
-    legalPrivacy: "legal/confidentialite",
-    legalCookies: "legal/cookies",
-    legalTerms: "legal/mentions-legales",
+    ...legalSegments,
   },
   it: {
     services: "servizi",
@@ -51,9 +57,7 @@ export const routeSegments: Record<Locale, Record<string, string>> = {
     faq: "faq",
     blog: "consigli",
     booking: "prenotazione",
-    legalPrivacy: "legale/privacy",
-    legalCookies: "legale/cookie",
-    legalTerms: "legale/termini",
+    ...legalSegments,
   },
   ru: {
     services: "services",
@@ -64,9 +68,7 @@ export const routeSegments: Record<Locale, Record<string, string>> = {
     faq: "faq",
     blog: "care",
     booking: "booking",
-    legalPrivacy: "legal/privacy-policy",
-    legalCookies: "legal/cookie-policy",
-    legalTerms: "legal/terms",
+    ...legalSegments,
   },
 };
 
