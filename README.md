@@ -23,8 +23,9 @@ browser's preferred language, or English by default.
 ## Languages & markets
 
 - Languages: English, Deutsch, Français, Italiano, Русский — routed as
-  `/en`, `/de`, `/fr`, `/it`, `/ru` (see `src/proxy.ts` for the redirect,
-  and `src/locales/` for the dictionaries).
+  `/en`, `/de`, `/fr`, `/it`, `/ru`. The bare `/` is a static page
+  (`src/app/page.tsx`) that redirects client-side to the visitor's browser
+  language; see `src/locales/` for the dictionaries.
 - Content sections use **localized URL segments**
   (`/en/services/dentistry` ↔ `/de/leistungen/zahnmedizin` ↔
   `/fr/services/dentisterie`, etc.) — defined in `src/config/routes.config.ts`.
@@ -58,6 +59,30 @@ paths and nothing else needs to change.
 See `.env.example`. `NEXT_PUBLIC_SITE_URL` feeds canonical URLs, hreflang
 alternates, the sitemap and JSON-LD. Analytics IDs are optional and only
 activate after a visitor accepts the cookie banner.
+
+## Deploying to GitHub Pages
+
+The site builds as a fully static export (`output: "export"` in
+`next.config.ts`) — no Node server needed at runtime.
+
+1. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Push to this repo's default branch. `.github/workflows/deploy-pages.yml`
+   builds and deploys automatically from there — nothing else to configure;
+   it derives the GitHub Pages base path and site URL from the repo name.
+3. The site is published at `https://<owner>.github.io/<repo>/`.
+
+To reproduce that build locally (e.g. to preview the exported `out/`
+folder before pushing):
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/ushki-lapki \
+NEXT_PUBLIC_SITE_URL=https://xugushik-source.github.io/ushki-lapki \
+npm run build
+```
+
+`out/` is then a self-contained static site; serve it with any static file
+server rooted one level above an `ushki-lapki/` folder to preview it exactly
+as GitHub Pages will.
 
 ## Architecture notes
 

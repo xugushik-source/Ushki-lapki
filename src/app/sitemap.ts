@@ -7,6 +7,10 @@ import { doctors } from "@/config/doctors.config";
 import { demoBlog } from "@/data/demo/blog";
 import { localPages } from "@/data/demo/localPages";
 
+// Required by `output: "export"` — this route has no per-request input, so
+// it's safe to bake into a static sitemap.xml at build time.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
