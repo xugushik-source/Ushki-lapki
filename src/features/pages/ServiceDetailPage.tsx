@@ -65,7 +65,15 @@ export function ServiceDetailPage({ locale, slug }: { locale: Locale; slug: stri
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-primary pt-32">
-        <Image src={service.image} alt={service.name[locale]} fill sizes="100vw" className="object-cover opacity-40" priority />
+        <Image
+          src={service.image}
+          alt={service.name[locale]}
+          fill
+          sizes="100vw"
+          className="object-cover opacity-40"
+          style={{ objectPosition: images.serviceHeroPosition(service.slug.en) }}
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent" />
         <Container className="relative z-10 pb-14">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-accent">{dict.nav.services}</p>
