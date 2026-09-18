@@ -6,10 +6,10 @@ import { routePath } from "@/lib/routes";
 import { cn } from "@/lib/cn";
 
 const sizeClasses: Record<ServiceDetail["bentoSize"], string> = {
-  sm: "col-span-1 row-span-1 aspect-square",
-  md: "col-span-1 row-span-1 aspect-4/5 sm:aspect-square",
-  lg: "col-span-2 row-span-2 aspect-square sm:aspect-4/3",
-  wide: "col-span-2 row-span-1 aspect-4/3 sm:aspect-16/9",
+  sm: "col-span-1 row-span-1 aspect-square sm:aspect-auto",
+  md: "col-span-2 row-span-1 aspect-video sm:col-span-1 sm:aspect-auto",
+  lg: "col-span-2 row-span-2 aspect-square sm:aspect-auto",
+  wide: "col-span-2 row-span-1 aspect-video sm:aspect-auto",
 };
 
 export function ServiceCard({
