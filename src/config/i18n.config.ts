@@ -9,6 +9,16 @@ export const localeNames: Record<string, string> = {
   ru: "Русский",
 };
 
+// Visual hint that the site is multilingual at a glance — paired with the
+// language name/code everywhere the switcher renders.
+export const localeFlags: Record<string, string> = {
+  en: "🇺🇸",
+  de: "🇩🇪",
+  fr: "🇫🇷",
+  it: "🇮🇹",
+  ru: "🇷🇺",
+};
+
 // Reserved for future markets (section 4 of the brief) — adding one of these
 // only needs a dictionary + an entry here + a routeSegments row, no component changes.
 export const futureLocales = [

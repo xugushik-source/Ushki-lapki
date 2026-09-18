@@ -3,9 +3,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { Globe } from "lucide-react";
 import { LOCALES, Locale } from "@/types";
-import { localeNames } from "@/config/i18n.config";
+import { localeNames, localeFlags } from "@/config/i18n.config";
 import { switchLocalePath } from "@/lib/routes";
 import { cn } from "@/lib/cn";
 
@@ -36,7 +35,7 @@ export function LanguageSwitcher({
           variant === "light" ? "text-foreground hover:bg-surface" : "text-primary-foreground hover:bg-white/10",
         )}
       >
-        <Globe className="h-4 w-4" aria-hidden="true" />
+        <span aria-hidden="true">{localeFlags[locale]}</span>
         {locale.toUpperCase()}
       </button>
       {open ? (
@@ -50,10 +49,11 @@ export function LanguageSwitcher({
                 href={switchLocalePath(pathname, locale, l)}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "block px-4 py-2 text-sm hover:bg-background",
+                  "flex items-center gap-2 px-4 py-2 text-sm hover:bg-background",
                   l === locale ? "font-semibold text-primary" : "text-foreground",
                 )}
               >
+                <span aria-hidden="true">{localeFlags[l]}</span>
                 {localeNames[l]}
               </Link>
             </li>

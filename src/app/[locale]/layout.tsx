@@ -95,7 +95,7 @@ export default async function LocaleLayout({
         <a href="#main-content" className="skip-link">
           {dict.common.skipToContent}
         </a>
-        <SplashIntro locale={locale} />
+        <SplashIntro />
         <Header locale={locale} dict={dict} />
         <main id="main-content" className="flex-1 pb-20 lg:pb-0">
           <PageTransition>{children}</PageTransition>

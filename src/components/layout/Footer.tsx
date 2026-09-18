@@ -7,6 +7,7 @@ import { clinicConfig } from "@/config/clinic.config";
 import { socialConfig } from "@/config/social.config";
 import { primaryNav, footerLegalRouteKeys } from "@/config/navigation.config";
 import { routePath, localePath } from "@/lib/routes";
+import { localeFlags } from "@/config/i18n.config";
 import { Container } from "@/components/ui/Container";
 
 const navLabelMap = (dict: Dictionary) => ({
@@ -112,8 +113,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <li key={l}>
                   <Link
                     href={localePath(l)}
-                    className="rounded-full border border-white/20 px-3 py-1 hover:border-accent hover:text-accent"
+                    className="flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 hover:border-accent hover:text-accent"
                   >
+                    <span aria-hidden="true">{localeFlags[l]}</span>
                     {l.toUpperCase()}
                   </Link>
                 </li>
