@@ -1,30 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
 import { analyticsConfig } from "@/config/analytics.config";
-import { CONSENT_EVENT, CONSENT_STORAGE_KEY } from "./ConsentBanner";
+import { useCookieConsent } from "@/lib/cookieConsent";
 
 // Loads GA / GTM / Meta Pixel only once an ID is configured via env AND the
 // visitor has actively consented — never before (brief section 56/57).
 export function AnalyticsScripts() {
-  const [consented, setConsented] = useState(false);
+  const consent = useCookieConsent();
 
-  useEffect(() => {
-    try {
-      setConsented(localStorage.getItem(CONSENT_STORAGE_KEY) === "accepted");
-    } catch {
-      setConsented(false);
-    }
-
-    function onChange(e: Event) {
-      setConsented((e as CustomEvent<string>).detail === "accepted");
-    }
-    window.addEventListener(CONSENT_EVENT, onChange);
-    return () => window.removeEventListener(CONSENT_EVENT, onChange);
-  }, []);
-
-  if (!consented) return null;
+  if (consent !== "accepted") return null;
 
   return (
     <>

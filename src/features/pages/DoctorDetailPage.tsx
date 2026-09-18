@@ -8,7 +8,6 @@ import { clinicConfig } from "@/config/clinic.config";
 import { routePath } from "@/lib/routes";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
 import { FadeUp } from "@/components/ui/FadeUp";
 

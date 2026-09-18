@@ -24,11 +24,7 @@ export function Counter({
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!isInView) return;
-    if (reduce) {
-      setDisplay(value);
-      return;
-    }
+    if (!isInView || reduce) return;
     motionValue.set(value);
   }, [isInView, motionValue, reduce, value]);
 
@@ -37,10 +33,13 @@ export function Counter({
     return unsubscribe;
   }, [spring]);
 
+  // Reduced motion skips the spring entirely and just shows the final value.
+  const shown = reduce && isInView ? value : display;
+
   return (
     <motion.span ref={ref} className={className}>
       {prefix}
-      {display.toLocaleString()}
+      {shown.toLocaleString()}
       {suffix}
     </motion.span>
   );

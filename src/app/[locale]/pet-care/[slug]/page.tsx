@@ -15,7 +15,7 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
   const item = demoBlog.find((p) => p.slug === slug);
   const alternates = item
-    ? buildAlternates("blog", (loc) => item.slug)
+    ? buildAlternates("blog", () => item.slug)
     : undefined;
   return {
     title: item?.title[locale] ?? dict.blogPage.heading,

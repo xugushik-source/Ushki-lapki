@@ -1,36 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Locale } from "@/types";
 import { Dictionary } from "@/locales";
 import { Button } from "@/components/ui/Button";
 import { routePath } from "@/lib/routes";
-
-export const CONSENT_STORAGE_KEY = "cookie-consent";
-export const CONSENT_EVENT = "cookie-consent-change";
+import { useCookieConsent, setCookieConsent } from "@/lib/cookieConsent";
 
 export function ConsentBanner({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const [visible, setVisible] = useState(false);
+  const consent = useCookieConsent();
 
-  useEffect(() => {
-    try {
-      setVisible(!localStorage.getItem(CONSENT_STORAGE_KEY));
-    } catch {
-      setVisible(false);
-    }
-  }, []);
-
-  function respond(value: "accepted" | "declined") {
-    try {
-      localStorage.setItem(CONSENT_STORAGE_KEY, value);
-      window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: value }));
-    } catch {
-      // Private mode / blocked storage: analytics simply stays off this session.
-    }
-    setVisible(false);
-  }
-
-  if (!visible) return null;
+  if (consent !== null) return null;
 
   return (
     // bottom-20 clears the mobile action bar (fixed, lg:hidden) below lg;
@@ -43,10 +22,10 @@ export function ConsentBanner({ locale, dict }: { locale: Locale; dict: Dictiona
         </a>
       </p>
       <div className="mt-3 flex gap-2">
-        <Button size="md" onClick={() => respond("accepted")}>
+        <Button size="md" onClick={() => setCookieConsent("accepted")}>
           {dict.common.cookieAccept}
         </Button>
-        <Button size="md" variant="outline" onClick={() => respond("declined")}>
+        <Button size="md" variant="outline" onClick={() => setCookieConsent("declined")}>
           {dict.common.cookieDecline}
         </Button>
       </div>
