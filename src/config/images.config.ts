@@ -76,8 +76,7 @@ const serviceHeroPositions: Record<string, string> = {
   "preventive-care": "center 45%",
 };
 
-// Doctors without a real photo yet (noah-schmidt) keep their placeholder
-// SVG until a matching photo is supplied.
+// All 8 doctors now have a real photo.
 const doctorOverrides: Record<string, string> = {
   "elena-popova": `${real}/cardiology-exam.jpg`,
   "thomas-wright": `${real}/dermatology-exam.jpg`,
@@ -86,6 +85,7 @@ const doctorOverrides: Record<string, string> = {
   "amelie-laurent": `${real}/inpatient-kennel.jpg`,
   "marco-ferrari": `${real}/dentistry-exam.jpg`,
   "david-cohen": `${real}/david-cohen-portrait.jpg`,
+  "noah-schmidt": `${real}/noah-schmidt-portrait.jpg`,
 };
 
 const blogOverrides: Record<string, string> = {
