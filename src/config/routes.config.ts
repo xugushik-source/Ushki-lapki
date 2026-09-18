@@ -1,0 +1,73 @@
+import { Locale } from "@/types";
+
+// Localized URL segments. Switching language keeps the visitor on the
+// equivalent page instead of bouncing to the homepage (see localePathFor in lib/routes.ts).
+export const routeSegments: Record<Locale, Record<string, string>> = {
+  en: {
+    services: "services",
+    doctors: "doctors",
+    prices: "prices",
+    about: "about",
+    contacts: "contacts",
+    faq: "faq",
+    blog: "pet-care",
+    booking: "booking",
+    legalPrivacy: "legal/privacy-policy",
+    legalCookies: "legal/cookie-policy",
+    legalTerms: "legal/terms",
+  },
+  de: {
+    services: "leistungen",
+    doctors: "tieraerzte",
+    prices: "preise",
+    about: "ueber-uns",
+    contacts: "kontakt",
+    faq: "faq",
+    blog: "tierratgeber",
+    booking: "termin",
+    legalPrivacy: "recht/datenschutz",
+    legalCookies: "recht/cookie-richtlinie",
+    legalTerms: "recht/impressum",
+  },
+  fr: {
+    services: "services",
+    doctors: "veterinaires",
+    prices: "tarifs",
+    about: "a-propos",
+    contacts: "contact",
+    faq: "faq",
+    blog: "conseils-animaux",
+    booking: "rendez-vous",
+    legalPrivacy: "legal/confidentialite",
+    legalCookies: "legal/cookies",
+    legalTerms: "legal/mentions-legales",
+  },
+  it: {
+    services: "servizi",
+    doctors: "veterinari",
+    prices: "prezzi",
+    about: "chi-siamo",
+    contacts: "contatti",
+    faq: "faq",
+    blog: "consigli",
+    booking: "prenotazione",
+    legalPrivacy: "legale/privacy",
+    legalCookies: "legale/cookie",
+    legalTerms: "legale/termini",
+  },
+  ru: {
+    services: "services",
+    doctors: "doctors",
+    prices: "prices",
+    about: "about",
+    contacts: "contacts",
+    faq: "faq",
+    blog: "care",
+    booking: "booking",
+    legalPrivacy: "legal/privacy-policy",
+    legalCookies: "legal/cookie-policy",
+    legalTerms: "legal/terms",
+  },
+};
+
+export type RouteKey = keyof (typeof routeSegments)["en"];
