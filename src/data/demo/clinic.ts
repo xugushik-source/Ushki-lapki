@@ -32,6 +32,13 @@ export const demoClinicContent: ClinicContent = {
     it: "/brand/logo-it.png",
     ru: "/brand/logo-ru.png",
   },
+  logoMark: {
+    en: "/brand/mark-en.png",
+    de: "/brand/mark-de.png",
+    fr: "/brand/mark-fr.png",
+    it: "/brand/mark-it.png",
+    ru: "/brand/mark-ru.png",
+  },
   phone: "+995591244075",
   phoneDisplay: "+995 591 24 40 75",
   whatsappNumber: "995591244075",

@@ -35,11 +35,11 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href={localePath(locale)} className="flex items-center gap-2">
               <Image
-                src={clinicConfig.logo[locale]}
+                src={clinicConfig.logoMark[locale]}
                 alt={clinicConfig.name[locale]}
-                width={44}
-                height={44}
-                className="h-11 w-11 rounded-full object-contain"
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-full bg-white object-contain"
               />
               <span className="font-serif text-xl">{clinicConfig.name[locale]}</span>
             </Link>

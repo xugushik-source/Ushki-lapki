@@ -1,7 +1,7 @@
 // Core domain types for the Paws & Ears veterinary engine.
 // Keeping these centralized lets config/data files and components share one contract.
 
-export const LOCALES = ["en", "de", "fr", "it", "ru"] as const;
+export const LOCALES = ["en", "de", "ru", "fr", "it"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 
@@ -119,6 +119,9 @@ export interface ClinicContent {
   legalSuffix: LocalizedText;
   tagline: LocalizedText;
   logo: LocalizedText;
+  // Icon-only crop of `logo` (no wordmark) for small/circular slots — the
+  // full lockup becomes an unreadable smudge at header/footer sizes.
+  logoMark: LocalizedText;
   phone: string;
   phoneDisplay: string;
   whatsappNumber: string;

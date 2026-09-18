@@ -55,11 +55,11 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
         <Link href={localePath(locale)} className="flex items-center gap-2">
           <Image
-            src={clinicConfig.logo[locale]}
+            src={clinicConfig.logoMark[locale]}
             alt={`${clinicConfig.name[locale]} — ${clinicConfig.legalSuffix[locale]}`}
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded-full object-contain"
+            width={56}
+            height={56}
+            className="h-14 w-14 rounded-full object-contain"
             priority
           />
           <span
