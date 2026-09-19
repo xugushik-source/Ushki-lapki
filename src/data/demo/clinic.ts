@@ -44,16 +44,16 @@ export const demoClinicContent: ClinicContent = {
   whatsappNumber: "995591244075",
   whatsappEnabled: true,
   email: "hello@pawsandears.example",
-  address: "128 Harbor View Lane, Boston, MA 02110",
+  address: "12 Rustaveli Avenue, Tbilisi 0108, Georgia",
   addressCountry: {
-    en: "United States",
-    de: "Vereinigte Staaten",
-    fr: "États-Unis",
-    it: "Stati Uniti",
-    ru: "США",
+    en: "Georgia",
+    de: "Georgien",
+    fr: "Géorgie",
+    it: "Georgia",
+    ru: "Грузия",
   },
-  coordinates: { lat: 42.3551, lng: -71.0656 },
-  mapsUrl: "https://maps.google.com/?q=42.3551,-71.0656",
+  coordinates: { lat: 41.7151, lng: 44.8271 },
+  mapsUrl: "https://maps.google.com/?q=41.7151,44.8271",
   openingHours: [
     {
       days: { en: "Mon – Fri", de: "Mo – Fr", fr: "Lun – Ven", it: "Lun – Ven", ru: "Пн – Пт" },
@@ -71,7 +71,7 @@ export const demoClinicContent: ClinicContent = {
   emergency: {
     enabled: true,
     is24_7: true,
-    phone: "+16175550199",
+    phone: "+995591244075",
   },
   foundedYear: 2010,
   stats: {
